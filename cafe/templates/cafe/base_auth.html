@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Cafe Solace{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Dancing+Script:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'cafe/css/auth.css' %}">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <aside class="brand-panel">
+        <div class="logo">
+          <svg class="bean" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+            <g transform="translate(11 11) rotate(-35)">
+              <ellipse rx="6.5" ry="9" fill="#ecdfd3"/>
+              <path d="M0 -9 C-5 -3 5 3 0 9" fill="none" stroke="#3f271d" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(21 21) rotate(-35)">
+              <ellipse rx="6" ry="8.2" fill="#d9c3b0"/>
+              <path d="M0 -8.2 C-4.5 -3 4.5 3 0 8.2" fill="none" stroke="#3f271d" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+          </svg>
+          Cafe Solace
+        </div>
+        <div class="brand-text">
+          <p class="eyebrow">Your Daily Moment</p>
+          <h2>Good Coffee.<br>Great Company.</h2>
+          <p class="sub">A little warmth in every cup.<br>Make yourself at home.</p>
+        </div>
+        <p class="tagline">Brewed with care. Shared with love.</p>
+      </aside>
+
+      <section class="form-panel">
+        {% block content %}{% endblock %}
+      </section>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'cafe/base_auth.html' %}
+{% block title %}Login | Cafe Solace{% endblock %}
+
+{% block content %}
+<h1>Welcome back</h1>
+<p class="lead">Your next good cup starts here.</p>
+
+{% for message in messages %}
+  <div class="alert {{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="field">
+    <label for="{{ form.username.id_for_label }}">Email address</label>
+    {{ form.username }}
+  </div>
+  <div class="field">
+    <label for="{{ form.password.id_for_label }}">Password</label>
+    {{ form.password }}
+  </div>
+
+  <div class="row">
+    <label class="check"><input type="checkbox" name="remember"> Remember me</label>
+    <a href="#" class="small-link">Forgot Password?</a>
+  </div>
+
+  <button type="submit" class="btn">Log in</button>
+</form>
+
+<p class="switch">New to Cafe Solace? <a href="{% url 'register_user' %}">Create an account</a></p>
+{% endblock %}

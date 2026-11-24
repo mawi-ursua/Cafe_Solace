@@ -1,0 +1,17 @@
+{% extends 'cafe/base_auth.html' %}
+{% block title %}Dashboard | Cafe Solace{% endblock %}
+
+{% block content %}
+{% for message in messages %}
+  <div class="alert {{ message.tags }}">{{ message }}</div>
+{% endfor %}
+<div class="success-view">
+  <div class="check-circle">&#10003;</div>
+  <p class="status">Logged in successfully</p>
+  <h1>Welcome home{% if user.first_name %}, {{ user.first_name }}{% endif %}.</h1>
+  <p class="lead">You're all logged in and ready for your next good cup.<br>Take a moment. Make yourself at home.</p>
+  <a href="#" class="btn">Explore the menu</a>
+  <a href="{% url 'logout_user' %}" class="signout">Sign out</a>
+  <p class="waiting">Your daily moment is waiting.</p>
+</div>
+{% endblock %}
