@@ -1,0 +1,32 @@
+# ---------- Virtual environment ----------
+venv/
+env/
+.venv/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# ---------- Django ----------
+db.sqlite3
+db.sqlite3-journal
+*.log
+local_settings.py
+.env
+
+# Collected static files (created by collectstatic on PythonAnywhere)
+static/
+staticfiles/
+
+# Uploaded media (if you add photo uploads later)
+media/
+
+# ---------- Editors / OS ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
